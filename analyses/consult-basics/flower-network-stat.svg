@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 280" style="display:block;width:100%;height:auto" role="img" aria-label="전국 꽃집 50,000개 이상 통계 및 한반도 분포 지도">
+
+  <!-- Background -->
+  <rect width="760" height="280" rx="12" fill="#fff5f7" stroke="#ffd0db" stroke-width="1"/>
+
+  <!-- ── LEFT: STAT ── -->
+  <text x="190" y="65" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="13" fill="#e8748e">2025년 기준 전국에 위치한 꽃집</text>
+  <text x="190" y="140" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="58" font-weight="900" fill="#d9446c" letter-spacing="-2">50,000</text>
+  <text x="190" y="178" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="28" font-weight="700" fill="#d9446c">+@</text>
+  <text x="190" y="215" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="13" fill="#e8748e">쿠팡 물류창고보다 훨씬 많은 숫자</text>
+  <text x="190" y="238" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="12" fill="#f0a0b0">어느 지역이든 3시간 이내 배송 가능</text>
+
+  <!-- Divider line -->
+  <line x1="380" y1="20" x2="380" y2="260" stroke="#ffd0db" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- ── RIGHT: KOREA MAP ── -->
+
+  <!-- Korea peninsula outline -->
+  <path d="
+    M 488,22
+    L 583,17
+    L 628,38
+    L 648,80
+    L 646,120
+    L 638,163
+    L 623,203
+    L 593,233
+    L 558,245
+    L 523,240
+    L 491,222
+    L 471,192
+    L 463,153
+    L 468,113
+    L 478,72
+    L 488,45
+    Z
+  " fill="#ffeaee" stroke="#ffb0c5" stroke-width="1.5"/>
+
+  <!-- Jeju island -->
+  <ellipse cx="525" cy="262" rx="20" ry="10" fill="#ffeaee" stroke="#ffb0c5" stroke-width="1.5"/>
+
+  <!-- Flower shop dots scattered across the peninsula -->
+  <!-- Northern region -->
+  <circle cx="516" cy="38" r="5" fill="#d9446c" opacity="0.7"/>
+  <circle cx="558" cy="32" r="5" fill="#d9446c" opacity="0.7"/>
+  <circle cx="598" cy="48" r="5" fill="#d9446c" opacity="0.7"/>
+  <circle cx="628" cy="68" r="5" fill="#d9446c" opacity="0.7"/>
+
+  <!-- Upper-mid region -->
+  <circle cx="488" cy="72" r="5" fill="#d9446c" opacity="0.7"/>
+  <circle cx="522" cy="65" r="5" fill="#d9446c" opacity="0.7"/>
+  <circle cx="558" cy="68" r="5" fill="#d9446c" opacity="0.7"/>
+  <circle cx="598" cy="80" r="5" fill="#d9446c" opacity="0.7"/>
+  <circle cx="632" cy="98" r="5" fill="#d9446c" opacity="0.7"/>
+
+  <!-- Mid region (Seoul area - more dense) -->
+  <circle cx="480" cy="110" r="5" fill="#d9446c" opacity="0.9"/>
+  <circle cx="506" cy="100" r="5" fill="#d9446c" opacity="0.9"/>
+  <circle cx="530" cy="95" r="6" fill="#d9446c"/>
+  <circle cx="558" cy="100" r="6" fill="#d9446c"/>
+  <circle cx="588" cy="108" r="5" fill="#d9446c" opacity="0.9"/>
+  <circle cx="618" cy="118" r="5" fill="#d9446c" opacity="0.9"/>
+  <circle cx="638" cy="138" r="5" fill="#d9446c" opacity="0.7"/>
+
+  <!-- Mid-lower region -->
+  <circle cx="475" cy="145" r="5" fill="#d9446c" opacity="0.8"/>
+  <circle cx="502" cy="138" r="5" fill="#d9446c" opacity="0.8"/>
+  <circle cx="530" cy="135" r="5" fill="#d9446c" opacity="0.8"/>
+  <circle cx="562" cy="140" r="5" fill="#d9446c" opacity="0.8"/>
+  <circle cx="592" cy="148" r="5" fill="#d9446c" opacity="0.8"/>
+  <circle cx="618" cy="162" r="5" fill="#d9446c" opacity="0.7"/>
+
+  <!-- Lower region -->
+  <circle cx="478" cy="178" r="5" fill="#d9446c" opacity="0.7"/>
+  <circle cx="506" cy="172" r="5" fill="#d9446c" opacity="0.7"/>
+  <circle cx="534" cy="175" r="5" fill="#d9446c" opacity="0.7"/>
+  <circle cx="562" cy="178" r="5" fill="#d9446c" opacity="0.7"/>
+  <circle cx="590" cy="180" r="5" fill="#d9446c" opacity="0.7"/>
+  <circle cx="612" cy="192" r="5" fill="#d9446c" opacity="0.7"/>
+
+  <!-- South region (Busan, Gwangju area) -->
+  <circle cx="485" cy="208" r="5" fill="#d9446c" opacity="0.7"/>
+  <circle cx="512" cy="215" r="5" fill="#d9446c" opacity="0.7"/>
+  <circle cx="540" cy="218" r="5" fill="#d9446c" opacity="0.7"/>
+  <circle cx="568" cy="215" r="5" fill="#d9446c" opacity="0.7"/>
+  <circle cx="592" cy="208" r="5" fill="#d9446c" opacity="0.7"/>
+
+  <!-- Label -->
+  <text x="555" y="272" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="10" fill="#e8748e">● 각 지역 꽃집</text>
+</svg>

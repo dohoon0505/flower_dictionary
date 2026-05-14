@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" style="display:block;width:100%;height:auto" role="img" aria-label="쿠팡 물류창고 배송과 전국꽃배달 구조 비교">
+  <defs>
+    <marker id="zc-ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a90d9"/>
+    </marker>
+    <marker id="zc-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d9446c"/>
+    </marker>
+  </defs>
+
+  <!-- Panel backgrounds -->
+  <rect x="8" y="8" width="362" height="284" rx="12" fill="#f5f8fc" stroke="#d0e4f7" stroke-width="1"/>
+  <rect x="390" y="8" width="362" height="284" rx="12" fill="#fff5f7" stroke="#ffd0db" stroke-width="1"/>
+
+  <!-- Panel titles -->
+  <text x="189" y="34" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="13" font-weight="700" fill="#4a90d9">쿠팡 로켓배송</text>
+  <text x="571" y="34" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="13" font-weight="700" fill="#d9446c">전국꽃배달</text>
+
+  <!-- Center "같은 원리" divider -->
+  <text x="380" y="149" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="10" font-weight="700" fill="#bbb">같은</text>
+  <text x="380" y="163" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="10" font-weight="700" fill="#bbb">원리</text>
+
+  <!-- ── LEFT PANEL (COUPANG) ── -->
+
+  <!-- Destination box -->
+  <rect x="129" y="128" width="120" height="56" rx="10" fill="#4a90d9"/>
+  <text x="189" y="151" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="12" font-weight="700" fill="#fff">서울</text>
+  <text x="189" y="170" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="12" font-weight="700" fill="#fff">중랑구</text>
+
+  <!-- Warehouse dots (inactive) -->
+  <circle cx="88" cy="72" r="16" fill="#e2e8f0" stroke="#c8d5e8" stroke-width="1.5"/>
+  <text x="88" y="68" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="8" fill="#8899aa">물류</text>
+  <text x="88" y="79" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="8" fill="#8899aa">창고</text>
+
+  <circle cx="189" cy="57" r="16" fill="#e2e8f0" stroke="#c8d5e8" stroke-width="1.5"/>
+  <text x="189" y="53" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="8" fill="#8899aa">물류</text>
+  <text x="189" y="64" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="8" fill="#8899aa">창고</text>
+
+  <circle cx="289" cy="72" r="16" fill="#e2e8f0" stroke="#c8d5e8" stroke-width="1.5"/>
+  <text x="289" y="68" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="8" fill="#8899aa">물류</text>
+  <text x="289" y="79" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="8" fill="#8899aa">창고</text>
+
+  <circle cx="318" cy="156" r="16" fill="#e2e8f0" stroke="#c8d5e8" stroke-width="1.5"/>
+  <text x="318" y="152" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="8" fill="#8899aa">물류</text>
+  <text x="318" y="163" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="8" fill="#8899aa">창고</text>
+
+  <circle cx="189" cy="255" r="16" fill="#e2e8f0" stroke="#c8d5e8" stroke-width="1.5"/>
+  <text x="189" y="251" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="8" fill="#8899aa">물류</text>
+  <text x="189" y="262" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="8" fill="#8899aa">창고</text>
+
+  <circle cx="60" cy="156" r="16" fill="#e2e8f0" stroke="#c8d5e8" stroke-width="1.5"/>
+  <text x="60" y="152" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="8" fill="#8899aa">물류</text>
+  <text x="60" y="163" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="8" fill="#8899aa">창고</text>
+
+  <circle cx="88" cy="240" r="16" fill="#e2e8f0" stroke="#c8d5e8" stroke-width="1.5"/>
+  <text x="88" y="236" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="8" fill="#8899aa">물류</text>
+  <text x="88" y="247" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="8" fill="#8899aa">창고</text>
+
+  <!-- Nearest warehouse (highlighted) -->
+  <circle cx="289" cy="240" r="20" fill="#4a90d9" stroke="#2e70b8" stroke-width="2.5"/>
+  <text x="289" y="235" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="8" font-weight="700" fill="#fff">인근</text>
+  <text x="289" y="247" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="8" font-weight="700" fill="#fff">창고</text>
+
+  <!-- Arrow from nearest to destination -->
+  <line x1="271" y1="224" x2="249" y2="184" stroke="#4a90d9" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#zc-ab)"/>
+
+  <!-- Label -->
+  <text x="189" y="288" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="11" fill="#4a90d9">배송지 인근 물류창고에서 출발</text>
+
+  <!-- ── RIGHT PANEL (FLOWER) ── -->
+
+  <!-- Destination box -->
+  <rect x="511" y="128" width="120" height="56" rx="10" fill="#d9446c"/>
+  <text x="571" y="151" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="12" font-weight="700" fill="#fff">서울</text>
+  <text x="571" y="170" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="12" font-weight="700" fill="#fff">중랑구</text>
+
+  <!-- Flower shop dots (more numerous!) -->
+  <circle cx="466" cy="66" r="13" fill="#ffe8ed" stroke="#ffb0c8" stroke-width="1.5"/>
+  <text x="466" y="70" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="9" fill="#d9446c">꽃집</text>
+
+  <circle cx="507" cy="50" r="13" fill="#ffe8ed" stroke="#ffb0c8" stroke-width="1.5"/>
+  <text x="507" y="54" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="9" fill="#d9446c">꽃집</text>
+
+  <circle cx="555" cy="44" r="13" fill="#ffe8ed" stroke="#ffb0c8" stroke-width="1.5"/>
+  <text x="555" y="48" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="9" fill="#d9446c">꽃집</text>
+
+  <circle cx="608" cy="52" r="13" fill="#ffe8ed" stroke="#ffb0c8" stroke-width="1.5"/>
+  <text x="608" y="56" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="9" fill="#d9446c">꽃집</text>
+
+  <circle cx="651" cy="80" r="13" fill="#ffe8ed" stroke="#ffb0c8" stroke-width="1.5"/>
+  <text x="651" y="84" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="9" fill="#d9446c">꽃집</text>
+
+  <circle cx="669" cy="128" r="13" fill="#ffe8ed" stroke="#ffb0c8" stroke-width="1.5"/>
+  <text x="669" y="132" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="9" fill="#d9446c">꽃집</text>
+
+  <!-- Nearest flower shop (highlighted) -->
+  <circle cx="672" cy="180" r="20" fill="#d9446c" stroke="#b03358" stroke-width="2.5"/>
+  <text x="672" y="175" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="8" font-weight="700" fill="#fff">인근</text>
+  <text x="672" y="187" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="8" font-weight="700" fill="#fff">꽃집</text>
+
+  <circle cx="651" cy="232" r="13" fill="#ffe8ed" stroke="#ffb0c8" stroke-width="1.5"/>
+  <text x="651" y="236" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="9" fill="#d9446c">꽃집</text>
+
+  <circle cx="610" cy="264" r="13" fill="#ffe8ed" stroke="#ffb0c8" stroke-width="1.5"/>
+  <text x="610" y="268" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="9" fill="#d9446c">꽃집</text>
+
+  <circle cx="563" cy="272" r="13" fill="#ffe8ed" stroke="#ffb0c8" stroke-width="1.5"/>
+  <text x="563" y="276" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="9" fill="#d9446c">꽃집</text>
+
+  <circle cx="510" cy="258" r="13" fill="#ffe8ed" stroke="#ffb0c8" stroke-width="1.5"/>
+  <text x="510" y="262" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="9" fill="#d9446c">꽃집</text>
+
+  <circle cx="464" cy="228" r="13" fill="#ffe8ed" stroke="#ffb0c8" stroke-width="1.5"/>
+  <text x="464" y="232" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="9" fill="#d9446c">꽃집</text>
+
+  <circle cx="447" cy="178" r="13" fill="#ffe8ed" stroke="#ffb0c8" stroke-width="1.5"/>
+  <text x="447" y="182" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="9" fill="#d9446c">꽃집</text>
+
+  <circle cx="453" cy="122" r="13" fill="#ffe8ed" stroke="#ffb0c8" stroke-width="1.5"/>
+  <text x="453" y="126" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="9" fill="#d9446c">꽃집</text>
+
+  <!-- Arrow from nearest to destination -->
+  <line x1="653" y1="175" x2="634" y2="168" stroke="#d9446c" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#zc-ar)"/>
+
+  <!-- Label -->
+  <text x="571" y="288" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="11" fill="#d9446c">배송지 인근 꽃집에 의뢰</text>
+</svg>

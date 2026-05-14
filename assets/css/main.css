@@ -1141,9 +1141,11 @@ svg.ico { width: 24px; height: 24px; display: inline-block; flex-shrink: 0; vert
   .article-row { grid-template-columns: 36px 1fr; }
   .article-row-meta { grid-column: 1 / -1; padding-left: 52px; }
   /* Force single column so the auto-fill minmax(280px) doesn't push
-     cards past the viewport when the user scales up via 큰글씨 mode. */
+     cards past the viewport when the user scales up via 큰글씨 mode.
+     `minmax(0, 1fr)` ignores intrinsic min-content (which would otherwise
+     hold the track at 280px and overflow on a zoomed viewport). */
   .chapter-grid,
-  .audience-grid { grid-template-columns: 1fr; }
+  .audience-grid { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* ============ FOOTER ============ */

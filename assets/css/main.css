@@ -1007,7 +1007,6 @@ svg.ico { width: 24px; height: 24px; display: inline-block; flex-shrink: 0; vert
   font: 400 15px/1.85 var(--font-sans);
   color: var(--sm-content-primary);
   margin: 0 0 var(--size-500);
-  max-width: 760px;
 }
 
 .blk-note {
@@ -1168,7 +1167,6 @@ svg.ico { width: 24px; height: 24px; display: inline-block; flex-shrink: 0; vert
 /* ─── image block ─── */
 .blk-image {
   margin: 0 0 var(--size-600);
-  max-width: 760px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--sm-border-subtle);

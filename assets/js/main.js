@@ -268,8 +268,16 @@
       case 'kv':       return renderKV(block);
       case 'stats':    return renderStats(block);
       case 'structure': return renderStructure(block);
+      case 'image':     return renderImage(block);
       default: return '';
     }
+  }
+  function renderImage(b) {
+    var h = '<figure class="blk-image">';
+    h += '<img src="' + escapeHtml(b.src) + '" alt="' + escapeHtml(b.alt || '') + '" loading="lazy">';
+    if (b.caption) h += '<figcaption class="blk-image-caption">' + escapeHtml(b.caption) + '</figcaption>';
+    h += '</figure>';
+    return h;
   }
   function renderHeading(b) {
     return '<h2 class="blk-heading">' + escapeHtml(b.value) + '</h2>';

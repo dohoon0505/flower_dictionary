@@ -1165,6 +1165,27 @@ svg.ico { width: 24px; height: 24px; display: inline-block; flex-shrink: 0; vert
   margin-top: 4px;
 }
 
+/* ─── image block ─── */
+.blk-image {
+  margin: 0 0 var(--size-600);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--sm-border-subtle);
+  background: var(--sm-background-muted);
+}
+.blk-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.blk-image-caption {
+  font: 400 12px/1.5 var(--font-sans);
+  color: var(--sm-content-tertiary);
+  padding: var(--size-300) var(--size-400);
+  border-top: 1px solid var(--sm-border-subtle);
+  text-align: center;
+}
+
 /* Article skeleton (placeholder) */
 .placeholder-card {
   padding: var(--size-900) var(--size-700);

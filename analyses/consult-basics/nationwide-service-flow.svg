@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 252" style="display:block;width:100%;height:auto" role="img" aria-label="쿠팡 구조와 전국꽃배달 구조 비교 다이어그램">
+  <defs>
+    <marker id="arr-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d9446c"/>
+    </marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#bbb"/>
+    </marker>
+  </defs>
+
+  <!-- Row 1 bg: Coupang -->
+  <rect x="8" y="8" width="744" height="90" rx="12" fill="#f7f7f7" stroke="#e8e8e8" stroke-width="1"/>
+  <!-- Row 2 bg: Flower -->
+  <rect x="8" y="112" width="744" height="104" rx="12" fill="#fff5f7" stroke="#ffd0db" stroke-width="1"/>
+
+  <!-- Row labels -->
+  <text x="22" y="58" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="10" font-weight="700" fill="#bbb" letter-spacing="0.08em">COUPANG</text>
+  <text x="22" y="167" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="10" font-weight="700" fill="#d9446c" letter-spacing="0.05em">전국꽃배달</text>
+
+  <!-- ── ROW 1: Coupang ── -->
+  <!-- Box C1 -->
+  <rect x="88" y="20" width="120" height="62" rx="8" fill="#fff" stroke="#e0e0e0" stroke-width="1.5"/>
+  <text x="148" y="48" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="13" fill="#555">고객 주문</text>
+  <text x="148" y="66" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="11" fill="#aaa">서울 중랑구</text>
+  <!-- Arrow C1→C2 -->
+  <line x1="212" y1="51" x2="238" y2="51" stroke="#ccc" stroke-width="1.5" marker-end="url(#arr-g)"/>
+  <!-- Box C2 -->
+  <rect x="243" y="20" width="120" height="62" rx="8" fill="#fff" stroke="#e0e0e0" stroke-width="1.5"/>
+  <text x="303" y="48" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="13" fill="#555">쿠팡 서버</text>
+  <text x="303" y="66" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="11" fill="#aaa">주문 접수</text>
+  <!-- Arrow C2→C3 -->
+  <line x1="367" y1="51" x2="393" y2="51" stroke="#ccc" stroke-width="1.5" marker-end="url(#arr-g)"/>
+  <!-- Box C3 -->
+  <rect x="398" y="20" width="136" height="62" rx="8" fill="#fff" stroke="#e0e0e0" stroke-width="1.5"/>
+  <text x="466" y="48" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="13" fill="#555">인근 물류창고</text>
+  <text x="466" y="66" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="11" fill="#aaa">중랑구 인접 창고</text>
+  <!-- Arrow C3→C4 -->
+  <line x1="538" y1="51" x2="564" y2="51" stroke="#ccc" stroke-width="1.5" marker-end="url(#arr-g)"/>
+  <!-- Box C4 -->
+  <rect x="569" y="20" width="124" height="62" rx="8" fill="#fff" stroke="#e0e0e0" stroke-width="1.5"/>
+  <text x="631" y="48" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="13" fill="#555">로켓배송</text>
+  <text x="631" y="66" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="11" fill="#aaa">익일 도착</text>
+
+  <!-- Middle "같은 원리" label -->
+  <text x="380" y="107" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="11" fill="#d9446c" font-weight="600">↑ 같은 원리 ↓</text>
+
+  <!-- ── ROW 2: Flower ── -->
+  <!-- Box F1 -->
+  <rect x="88" y="124" width="120" height="80" rx="8" fill="#fff" stroke="#ffd0db" stroke-width="1.5"/>
+  <text x="148" y="158" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="13" font-weight="600" fill="#d9446c">고객 주문</text>
+  <text x="148" y="177" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="11" fill="#e8748e">서울 중랑구 배송</text>
+  <!-- Arrow F1→F2 -->
+  <line x1="212" y1="164" x2="238" y2="164" stroke="#f9a0b0" stroke-width="1.5" marker-end="url(#arr-r)"/>
+  <!-- Box F2 -->
+  <rect x="243" y="124" width="120" height="80" rx="8" fill="#fff" stroke="#ffd0db" stroke-width="1.5"/>
+  <text x="303" y="158" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="13" font-weight="600" fill="#d9446c">내 쇼핑몰</text>
+  <text x="303" y="177" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="11" fill="#e8748e">주문 접수</text>
+  <!-- Arrow F2→F3 -->
+  <line x1="367" y1="164" x2="393" y2="164" stroke="#f9a0b0" stroke-width="1.5" marker-end="url(#arr-r)"/>
+  <!-- Box F3 -->
+  <rect x="398" y="124" width="136" height="80" rx="8" fill="#fff" stroke="#ffd0db" stroke-width="1.5"/>
+  <text x="466" y="158" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="13" font-weight="600" fill="#d9446c">인근 꽃집 의뢰</text>
+  <text x="466" y="177" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="11" fill="#e8748e">중랑구 꽃집에 요청</text>
+  <!-- Arrow F3→F4 -->
+  <line x1="538" y1="164" x2="564" y2="164" stroke="#f9a0b0" stroke-width="1.5" marker-end="url(#arr-r)"/>
+  <!-- Box F4: highlighted -->
+  <rect x="569" y="124" width="124" height="80" rx="8" fill="#d9446c" stroke="none"/>
+  <text x="631" y="158" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="13" font-weight="700" fill="#fff">3시간 이내</text>
+  <text x="631" y="177" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="12" fill="#ffd0dc">배송 완료</text>
+
+  <!-- Footer stat -->
+  <text x="380" y="236" text-anchor="middle" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="11" fill="#bbb">전국 50,000개+ 꽃집 네트워크 — 어느 지역이든 3시간 이내 배송 가능</text>
+</svg>

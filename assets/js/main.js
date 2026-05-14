@@ -28,8 +28,54 @@
     });
     var sbSub = document.getElementById('theme-sub');
     if (sbSub) sbSub.textContent = sub;
+    try { localStorage.setItem('theme', next); } catch (e) { /* private mode */ }
   }
   window.toggleTheme = toggleTheme;
+
+  /* ============ FONT ZOOM ============ */
+  function applyZoom(mode) {
+    var body = document.body;
+    if (mode === 'large') body.setAttribute('data-zoom', 'large');
+    else body.removeAttribute('data-zoom');
+    var label = mode === 'large' ? '기본글씨' : '큰글씨';
+    var el = document.getElementById('zoom-label');
+    if (el) el.textContent = label;
+    document.querySelectorAll('.zoom-toggle').forEach(function (b) {
+      b.setAttribute('aria-pressed', mode === 'large' ? 'true' : 'false');
+    });
+  }
+  function toggleZoom() {
+    var current = document.body.getAttribute('data-zoom');
+    var next = current === 'large' ? 'normal' : 'large';
+    applyZoom(next);
+    try { localStorage.setItem('fontZoom', next); } catch (e) { /* private mode */ }
+  }
+  window.toggleZoom = toggleZoom;
+
+  /* Restore persisted UI preferences before first paint logic runs. */
+  (function restorePrefs() {
+    try {
+      var savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark' || savedTheme === 'light') {
+        document.body.setAttribute('data-theme', savedTheme);
+        var icon = savedTheme === 'light' ? '☾' : '☀';
+        var label = savedTheme === 'light' ? 'Dark' : 'Light';
+        var sub = savedTheme === 'light' ? 'Light Mode' : 'Dark Mode';
+        ['theme-icon', 'sidebar-theme-icon'].forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) el.textContent = icon;
+        });
+        ['theme-label', 'sidebar-theme-label'].forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) el.textContent = label;
+        });
+        var sbSub = document.getElementById('theme-sub');
+        if (sbSub) sbSub.textContent = sub;
+      }
+      var savedZoom = localStorage.getItem('fontZoom');
+      if (savedZoom === 'large') applyZoom('large');
+    } catch (e) { /* private mode */ }
+  })();
 
   /* ============ SIDEBAR (mobile) ============ */
   function toggleSidebar() {

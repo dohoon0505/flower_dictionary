@@ -81,6 +81,10 @@
     <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>
     </symbol>
+    <symbol id="i-textsize" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 18l4-11 4 11"/><path d="M6.5 14h5"/>
+      <path d="M14 18l3.5-8 3.5 8"/><path d="M15 16h5"/>
+    </symbol>
   </defs>
 </svg>
 
@@ -147,7 +151,11 @@
     </a>
     <nav class="topbar-nav">
       <a class="topbar-link" href="#changelog">릴리즈 노트</a>
-      <button class="theme-toggle" onclick="toggleTheme()">
+      <button class="zoom-toggle" onclick="toggleZoom()" aria-label="큰글씨 모드 전환" aria-pressed="false">
+        <svg class="ico" aria-hidden="true"><use href="#i-textsize"/></svg>
+        <span class="zoom-text" id="zoom-label">큰글씨</span>
+      </button>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="테마 전환">
         <span id="theme-icon">☾</span>
         <span id="theme-label">Dark</span>
       </button>

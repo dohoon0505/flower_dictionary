@@ -205,7 +205,8 @@ body {
   transition: color var(--motion-fast), background var(--motion-fast);
 }
 .topbar-link:hover { color: var(--sm-content-primary); background: var(--sm-background-muted); }
-.theme-toggle {
+.theme-toggle,
+.zoom-toggle {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 7px 12px;
   background: var(--sm-background-muted);
@@ -216,7 +217,14 @@ body {
   cursor: pointer;
   transition: all var(--motion-fast) var(--ease-standard);
 }
-.theme-toggle:hover { border-color: var(--sm-border-strong); }
+.theme-toggle:hover,
+.zoom-toggle:hover { border-color: var(--sm-border-strong); }
+.zoom-toggle .ico { width: 16px; height: 16px; }
+.zoom-toggle[aria-pressed="true"] {
+  background: var(--sm-interactive-brand-subtle);
+  border-color: var(--sm-content-brand);
+  color: var(--sm-content-brand);
+}
 
 /* ============ SIDEBAR ============ */
 .sidebar {
@@ -1153,4 +1161,56 @@ footer {
 @media (max-width: 600px) {
   .brand-text { display: none; }
   .topbar-link { display: none; }
+  .zoom-toggle .zoom-text { display: none; }
+  .zoom-toggle { padding: 8px 10px; }
+}
+
+/* ============ MOBILE TOUCH TARGET TWEAKS ============ */
+@media (max-width: 1099px) {
+  .sidebar-link {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  .sidebar-sub .sidebar-link {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
+/* Chapter header stacks vertically on narrow screens so the large
+   numeral does not crowd the title. */
+@media (max-width: 600px) {
+  .report-section-header {
+    flex-direction: column;
+    gap: var(--size-100);
+    align-items: flex-start;
+  }
+  .report-section-header-num {
+    font-size: 32px;
+    line-height: 1;
+  }
+}
+
+/* ============ FONT ZOOM (large reading mode) ============
+   Scales the entire shell (fonts, spacing, radius, shadows) so users
+   who find the default size too small can bump everything up in one
+   click. Uses CSS `zoom` because the layout is built in px and a single
+   property keeps every box, gap, and outline in proportion. */
+body[data-zoom="large"] { zoom: 1.2; }
+/* Firefox's CSS `zoom` only landed in 126; if a visitor hits the page
+   on an older build we fall back to font-size scaling so headings and
+   body copy still grow even if spacing stays put. */
+@supports not (zoom: 1) {
+  body[data-zoom="large"] { font-size: 18px; }
+  body[data-zoom="large"] .hero h1 { font-size: clamp(48px, 6vw, 64px); }
+  body[data-zoom="large"] .hero-desc { font-size: 19px; }
+  body[data-zoom="large"] .home-section-title { font-size: clamp(28px, 3.4vw, 36px); }
+  body[data-zoom="large"] .home-section-desc { font-size: 17px; }
+  body[data-zoom="large"] .report-title { font-size: clamp(32px, 4.4vw, 44px); }
+  body[data-zoom="large"] .report-summary { font-size: 18px; }
+  body[data-zoom="large"] .blk-text { font-size: 17px; }
+  body[data-zoom="large"] .blk-heading { font-size: 24px; }
+  body[data-zoom="large"] .chapter-card h3 { font-size: 20px; }
+  body[data-zoom="large"] .article-row-title { font-size: 17px; }
+  body[data-zoom="large"] .changelog-title { font-size: 24px; }
 }

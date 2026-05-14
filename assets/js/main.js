@@ -702,6 +702,13 @@
         }
       });
       searchIndex = idx;
+      /* If the modal is already open with a query typed before the
+         index finished building, re-run the search now so results
+         appear without the user having to retype. */
+      if (searchState.open) {
+        var input = document.getElementById('search-input');
+        if (input && input.value.trim()) renderSearchResults(input.value);
+      }
       return idx;
     });
   }

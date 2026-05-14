@@ -230,6 +230,7 @@ body {
 }
 .search-trigger {
   padding: 7px 10px 7px 12px;
+  min-width: 220px;
 }
 .search-trigger-text {
   color: var(--sm-content-secondary);

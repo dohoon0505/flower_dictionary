@@ -115,6 +115,8 @@
   /* ============ STATE ============ */
   var systemData = null;
   var chapterCache = {};
+  var searchIndex = null;
+  var searchState = { open: false, results: [], activeIdx: 0 };
 
   var homeHero = document.getElementById('home-hero');
   var homeSections = document.querySelectorAll('.home-section');
@@ -638,12 +640,258 @@
     if (e.key === 'Escape') closeSidebar();
   });
 
+  /* ============ SEARCH ============ */
+  /* Flatten the system into a searchable list.  Each entry has a haystack
+     (lower-cased joined text) plus the route to jump to. */
+  function buildSearchIndex() {
+    if (searchIndex) return Promise.resolve(searchIndex);
+    if (!systemData) return Promise.resolve([]);
+    var chapters = systemData.chapters || [];
+    return Promise.all(chapters.map(function (ch) {
+      return loadChapter(ch.id).catch(function () { return null; });
+    })).then(function (loaded) {
+      var idx = [];
+      chapters.forEach(function (meta, i) {
+        var ch = loaded[i];
+        var chapterTitle = meta.title || '';
+        var chapterSub = meta.subtitle || '';
+        idx.push({
+          type: 'chapter',
+          id: meta.id,
+          icon: meta.icon || 'i-book',
+          num: meta.num,
+          title: chapterTitle,
+          breadcrumb: 'CHAPTER ' + (meta.num || ''),
+          snippet: chapterSub + (meta.desc ? ' · ' + meta.desc : ''),
+          route: 'chapter/' + meta.id,
+          haystack: [meta.num, chapterTitle, chapterSub, meta.desc, ch && ch.summary, ch && ch.objective]
+            .filter(Boolean).join(' ').toLowerCase()
+        });
+        if (ch && Array.isArray(ch.articles)) {
+          ch.articles.forEach(function (art) {
+            var blocksText = '';
+            if (Array.isArray(art.blocks)) {
+              blocksText = art.blocks.map(function (b) {
+                if (b.type === 'kv' || b.type === 'structure') {
+                  return (b.title || '') + ' ' + (b.items || []).map(function (it) {
+                    return (it.label || '') + ' ' + (it.value || it.desc || '') + ' ' + (it.tag || '');
+                  }).join(' ');
+                }
+                if (b.type === 'stats') {
+                  return (b.items || []).map(function (it) {
+                    return (it.label || '') + ' ' + (it.number || '') + ' ' + (it.suffix || '');
+                  }).join(' ');
+                }
+                return b.value || '';
+              }).join(' ');
+            }
+            idx.push({
+              type: 'article',
+              chapterId: meta.id,
+              id: art.id,
+              icon: meta.icon || 'i-book',
+              num: art.num,
+              title: art.title || '',
+              breadcrumb: chapterTitle + ' · ' + (art.num || '') + '. ',
+              snippet: art.summary || '',
+              route: 'chapter/' + meta.id + '/' + art.id,
+              haystack: [art.num, art.title, art.summary, blocksText, chapterTitle]
+                .filter(Boolean).join(' ').toLowerCase()
+            });
+          });
+        }
+      });
+      searchIndex = idx;
+      return idx;
+    });
+  }
+
+  function scoreEntry(entry, tokens) {
+    var score = 0;
+    var titleLow = entry.title.toLowerCase();
+    var snippetLow = (entry.snippet || '').toLowerCase();
+    for (var i = 0; i < tokens.length; i++) {
+      var t = tokens[i];
+      if (!t) continue;
+      if (entry.haystack.indexOf(t) === -1) return 0; // every token must hit
+      if (titleLow.indexOf(t) !== -1) score += 10;
+      if (snippetLow.indexOf(t) !== -1) score += 4;
+      score += 1;
+    }
+    if (entry.type === 'chapter') score += 2;
+    return score;
+  }
+
+  function runSearch(query) {
+    var q = (query || '').trim().toLowerCase();
+    if (!q) return [];
+    var tokens = q.split(/\s+/).filter(Boolean);
+    var idx = searchIndex || [];
+    var hits = [];
+    for (var i = 0; i < idx.length; i++) {
+      var s = scoreEntry(idx[i], tokens);
+      if (s > 0) hits.push({ entry: idx[i], score: s });
+    }
+    hits.sort(function (a, b) { return b.score - a.score; });
+    return hits.slice(0, 30).map(function (h) { return h.entry; });
+  }
+
+  function escapeRegExp(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+  function highlight(text, tokens) {
+    var safe = escapeHtml(text || '');
+    if (!tokens || !tokens.length) return safe;
+    var pattern = tokens.filter(Boolean).map(escapeRegExp).join('|');
+    if (!pattern) return safe;
+    try {
+      return safe.replace(new RegExp('(' + pattern + ')', 'gi'), '<mark>$1</mark>');
+    } catch (e) {
+      return safe;
+    }
+  }
+
+  function renderSearchHint() {
+    var list = document.getElementById('search-results');
+    if (!list) return;
+    var h = '<div class="search-hint">';
+    h += '<div class="search-hint-title">검색 팁</div>';
+    h += '<div class="search-hint-row"><span class="search-hint-key">컴플레인</span><span>화난 고객 응대 시나리오</span></div>';
+    h += '<div class="search-hint-row"><span class="search-hint-key">사과</span><span>위로·사과 자리 추천</span></div>';
+    h += '<div class="search-hint-row"><span class="search-hint-key">카카오톡</span><span>채널 운영 비교</span></div>';
+    h += '<div class="search-hint-row"><span class="search-hint-key">환불</span><span>결제·환불 정책</span></div>';
+    h += '<div class="search-hint-row"><span class="search-hint-key">단골</span><span>재구매 응대 흐름</span></div>';
+    h += '</div>';
+    list.innerHTML = h;
+  }
+
+  function renderSearchResults(query) {
+    var list = document.getElementById('search-results');
+    if (!list) return;
+    var q = (query || '').trim();
+    if (!q) { renderSearchHint(); searchState.results = []; searchState.activeIdx = 0; return; }
+    var results = runSearch(q);
+    searchState.results = results;
+    searchState.activeIdx = 0;
+    if (!results.length) {
+      list.innerHTML = '<div class="search-empty"><strong>일치하는 결과가 없습니다</strong><span>'
+        + escapeHtml(q) + ' — 다른 키워드로 검색해 보세요.</span></div>';
+      return;
+    }
+    var tokens = q.toLowerCase().split(/\s+/).filter(Boolean);
+    var html = '';
+    var lastGroup = null;
+    results.forEach(function (entry, i) {
+      var group = entry.type === 'chapter' ? '챕터 · CHAPTERS' : '아티클 · ARTICLES';
+      if (group !== lastGroup) {
+        html += '<div class="search-group">' + group + '</div>';
+        lastGroup = group;
+      }
+      var typeBadge = entry.type === 'chapter' ? 'CHAPTER' : 'ARTICLE';
+      html += '<a class="search-result' + (i === 0 ? ' is-active' : '') + '" data-route="' + escapeHtml(entry.route) + '" data-idx="' + i + '">';
+      html += '<span class="search-result-ico"><svg class="ico"><use href="#' + escapeHtml(entry.icon) + '"/></svg></span>';
+      html += '<div class="search-result-body">';
+      html += '<div class="search-result-title">' + highlight(entry.title, tokens) + '</div>';
+      html += '<div class="search-result-meta">' + escapeHtml(entry.breadcrumb) + '</div>';
+      if (entry.snippet) {
+        html += '<div class="search-result-snippet">' + highlight(entry.snippet, tokens) + '</div>';
+      }
+      html += '</div>';
+      html += '<span class="search-result-type">' + typeBadge + '</span>';
+      html += '</a>';
+    });
+    list.innerHTML = html;
+  }
+
+  function setActiveSearchResult(nextIdx) {
+    var nodes = document.querySelectorAll('.search-result');
+    if (!nodes.length) return;
+    nextIdx = (nextIdx + nodes.length) % nodes.length;
+    searchState.activeIdx = nextIdx;
+    nodes.forEach(function (n, i) {
+      n.classList.toggle('is-active', i === nextIdx);
+    });
+    var active = nodes[nextIdx];
+    if (active && active.scrollIntoView) {
+      active.scrollIntoView({ block: 'nearest' });
+    }
+  }
+
+  function openSearch() {
+    var modal = document.getElementById('search-modal');
+    if (!modal) return;
+    modal.hidden = false;
+    searchState.open = true;
+    document.body.style.overflow = 'hidden';
+    var input = document.getElementById('search-input');
+    if (input) {
+      input.value = '';
+      renderSearchHint();
+      setTimeout(function () { input.focus(); }, 30);
+    }
+    buildSearchIndex();
+  }
+  window.openSearch = openSearch;
+
+  function closeSearch() {
+    var modal = document.getElementById('search-modal');
+    if (!modal) return;
+    modal.hidden = true;
+    searchState.open = false;
+    document.body.style.overflow = '';
+  }
+  window.closeSearch = closeSearch;
+
+  document.addEventListener('input', function (e) {
+    if (e.target && e.target.id === 'search-input') {
+      renderSearchResults(e.target.value);
+    }
+  });
+
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('[data-search-close]')) {
+      closeSearch();
+      return;
+    }
+    var hit = e.target.closest('.search-result');
+    if (hit) {
+      var route = hit.getAttribute('data-route');
+      closeSearch();
+      if (route) location.hash = '#' + route;
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    var mod = e.metaKey || e.ctrlKey;
+    if (mod && (e.key === 'k' || e.key === 'K')) {
+      e.preventDefault();
+      if (searchState.open) closeSearch(); else openSearch();
+      return;
+    }
+    if (!searchState.open) {
+      // "/" anywhere outside an input opens search
+      if (e.key === '/' && !/INPUT|TEXTAREA|SELECT/.test((e.target && e.target.tagName) || '')) {
+        e.preventDefault();
+        openSearch();
+      }
+      return;
+    }
+    if (e.key === 'Escape') { e.preventDefault(); closeSearch(); return; }
+    if (e.key === 'ArrowDown') { e.preventDefault(); setActiveSearchResult(searchState.activeIdx + 1); return; }
+    if (e.key === 'ArrowUp')   { e.preventDefault(); setActiveSearchResult(searchState.activeIdx - 1); return; }
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      var entry = searchState.results[searchState.activeIdx];
+      if (entry) { closeSearch(); location.hash = '#' + entry.route; }
+    }
+  });
+
   /* ============ INIT ============ */
   window.addEventListener('hashchange', route);
 
   function init() {
     loadSystem().then(function () {
       route();
+      buildSearchIndex();
     }).catch(function () {
       route();
     });

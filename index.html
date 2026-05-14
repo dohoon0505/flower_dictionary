@@ -85,6 +85,15 @@
       <path d="M5 18l4-11 4 11"/><path d="M6.5 14h5"/>
       <path d="M14 18l3.5-8 3.5 8"/><path d="M15 16h5"/>
     </symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2l8 4v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4z"/>
+    </symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+    </symbol>
+    <symbol id="i-corner-down-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 14l-4-4 4-4"/><path d="M20 4v6a4 4 0 01-4 4H5"/>
+    </symbol>
   </defs>
 </svg>
 
@@ -150,6 +159,11 @@
       <div class="brand-text">꽃배달 창업 백과사전</div>
     </a>
     <nav class="topbar-nav">
+      <button class="search-trigger" onclick="openSearch()" aria-label="검색 (단축키 Ctrl+K)">
+        <svg class="ico" aria-hidden="true"><use href="#i-search"/></svg>
+        <span class="search-trigger-text">검색</span>
+        <kbd class="search-trigger-kbd">⌘K</kbd>
+      </button>
       <a class="topbar-link" href="#changelog">릴리즈 노트</a>
       <button class="zoom-toggle" onclick="toggleZoom()" aria-label="큰글씨 모드 전환" aria-pressed="false">
         <svg class="ico" aria-hidden="true"><use href="#i-textsize"/></svg>
@@ -231,6 +245,26 @@
     </div>
   </footer>
 
+</div>
+
+<!-- ============ SEARCH MODAL ============ -->
+<div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-labelledby="search-input" hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel">
+    <div class="search-input-wrap">
+      <svg class="ico search-input-icon" aria-hidden="true"><use href="#i-search"/></svg>
+      <input type="search" id="search-input" class="search-input"
+             placeholder="챕터·아티클·본문 검색 (예: 사과, 컴플레인, 카카오톡)"
+             autocomplete="off" spellcheck="false" />
+      <kbd class="search-kbd" data-search-close>Esc</kbd>
+    </div>
+    <div class="search-results" id="search-results" role="listbox" aria-label="검색 결과"></div>
+    <div class="search-footer">
+      <span><kbd class="search-kbd">↑</kbd><kbd class="search-kbd">↓</kbd> 이동</span>
+      <span><kbd class="search-kbd"><svg class="ico" style="width:11px;height:11px" aria-hidden="true"><use href="#i-corner-down-left"/></svg></kbd> 열기</span>
+      <span><kbd class="search-kbd">Esc</kbd> 닫기</span>
+    </div>
+  </div>
 </div>
 
 <script src="assets/js/main.js"></script>

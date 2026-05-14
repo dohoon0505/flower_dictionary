@@ -2,9 +2,10 @@
   "name": "flower-startup-encyclopedia",
   "fullName": "꽃배달 창업 백과사전",
   "shortName": "꽃백",
-  "version": "1.0.0",
-  "description": "꽃배달 창업을 처음부터 끝까지 안내하는 실전 가이드북. 시장 분석부터 상품 구성, 공급망, 마케팅, 운영, 법규까지 단계별로 정리한 백과사전 형식의 매뉴얼.",
-  "tagline": "꽃을 파는 일이 아니라, 시간을 파는 일입니다.",
+  "version": "1.1.0",
+  "description": "온라인 꽃 배달 쇼핑몰 사장님·상담사를 위한 실전 상담 매뉴얼. 고객 문의를 분류하고, 어떻게 응대해야 하는지 시나리오별로 정리한 핸드북.",
+  "tagline": "꽃을 파는 일이 아니라, 사람의 마음을 읽는 일입니다.",
+  "audience": "온라인 쇼핑몰을 운영하면서 직접 고객 상담을 책임지는 분",
   "entry": {
     "ai": "AGENTS.md",
     "human": "CLAUDE.md",
@@ -12,91 +13,102 @@
   },
   "chapters": [
     {
-      "id": "getting-started",
+      "id": "consult-basics",
       "num": "01",
-      "title": "시작하기",
-      "subtitle": "꽃배달 창업의 첫 발걸음",
-      "desc": "시장 구조와 사업 형태, 필요한 자격을 한눈에 정리합니다.",
-      "icon": "i-leaf",
-      "data": "analyses/getting-started/chapter.json"
-    },
-    {
-      "id": "market-research",
-      "num": "02",
-      "title": "시장 분석 & 컨셉 설정",
-      "subtitle": "누구에게, 무엇을, 어떻게 팔 것인가",
-      "desc": "타겟·경쟁사·USP를 뾰족하게 정의하는 단계입니다.",
-      "icon": "i-search",
-      "data": "analyses/market-research/chapter.json"
-    },
-    {
-      "id": "product-pricing",
-      "num": "03",
-      "title": "상품 구성 & 가격 정책",
-      "subtitle": "꽃다발 한 송이부터 가격표까지",
-      "desc": "상품 카테고리·시즌 운영·원가 기반 가격 책정 방법을 다룹니다.",
-      "icon": "i-tag",
-      "data": "analyses/product-pricing/chapter.json"
-    },
-    {
-      "id": "supply-chain",
-      "num": "04",
-      "title": "공급망 & 재고 관리",
-      "subtitle": "양재꽃시장에서 우리 가게까지",
-      "desc": "도매시장·산지·자재 공급처와 재고 회전을 관리하는 노하우.",
-      "icon": "i-truck",
-      "data": "analyses/supply-chain/chapter.json"
-    },
-    {
-      "id": "channels",
-      "num": "05",
-      "title": "판매 채널 운영",
-      "subtitle": "오프라인 · 자사몰 · 플랫폼",
-      "desc": "매장과 온라인 채널을 어떻게 조합할지 결정하는 단계입니다.",
-      "icon": "i-store",
-      "data": "analyses/channels/chapter.json"
-    },
-    {
-      "id": "marketing",
-      "num": "06",
-      "title": "마케팅 & 고객 확보",
-      "subtitle": "SNS · 검색광고 · 리뷰 · 단골",
-      "desc": "초기 인지도 확보와 단골 만들기까지 마케팅의 전 단계.",
+      "title": "상담의 기초",
+      "subtitle": "꽃 배달 CS의 첫 원칙",
+      "desc": "응대 톤매너 · 골든타임 · 채널별 응대 방식과 매뉴얼 작성법.",
       "icon": "i-megaphone",
-      "data": "analyses/marketing/chapter.json"
+      "data": "analyses/consult-basics/chapter.json"
     },
     {
-      "id": "operations",
-      "num": "07",
-      "title": "주문 · 배송 운영",
-      "subtitle": "받고, 만들고, 보내는 흐름",
-      "desc": "주문 접수부터 배송 사고 대응까지 운영의 실전 매뉴얼.",
-      "icon": "i-package",
-      "data": "analyses/operations/chapter.json"
+      "id": "recommendation",
+      "num": "02",
+      "title": "상품 추천 상담",
+      "subtitle": "\"어떤 꽃이 좋을까요?\"에 답하기",
+      "desc": "상황 · 관계 · 예산별 추천 노하우와 꽃말 활용법.",
+      "icon": "i-tag",
+      "data": "analyses/recommendation/chapter.json"
     },
     {
-      "id": "finance-legal",
-      "num": "08",
-      "title": "재무 · 법규 · 세무",
-      "subtitle": "사업을 사업답게 굴리는 뼈대",
-      "desc": "손익분기·세무·인허가 등 사장님이라면 알아야 하는 숫자와 규정.",
+      "id": "delivery-inquiry",
+      "num": "03",
+      "title": "배송 문의 응대",
+      "subtitle": "당일 · 지정시간 · 사고 대응",
+      "desc": "지역별 가능 여부, 시간 지정, 배송 사고 시 대응 시나리오.",
+      "icon": "i-truck",
+      "data": "analyses/delivery-inquiry/chapter.json"
+    },
+    {
+      "id": "product-inquiry",
+      "num": "04",
+      "title": "상품 문의 응대",
+      "subtitle": "실물 · 사이즈 · 대체 · 관리법",
+      "desc": "사진과 실물 차이 설명, 대체 가능성, 꽃 관리 안내.",
+      "icon": "i-leaf",
+      "data": "analyses/product-inquiry/chapter.json"
+    },
+    {
+      "id": "payment-refund",
+      "num": "05",
+      "title": "결제 · 환불 · 교환",
+      "subtitle": "돈이 오가는 모든 응대",
+      "desc": "결제 수단, 주문 변경·취소, 환불 정책, 영수증·세금계산서.",
       "icon": "i-receipt",
-      "data": "analyses/finance-legal/chapter.json"
+      "data": "analyses/payment-refund/chapter.json"
+    },
+    {
+      "id": "complaint-handling",
+      "num": "06",
+      "title": "컴플레인 대응",
+      "subtitle": "화난 고객을 응대하는 기술",
+      "desc": "감정 진정시키기, 사과의 기술, 보상 라인, 블랙 컨슈머 대응.",
+      "icon": "i-shield",
+      "data": "analyses/complaint-handling/chapter.json"
+    },
+    {
+      "id": "retention",
+      "num": "07",
+      "title": "재구매 · 단골 만들기",
+      "subtitle": "한 번 산 고객이 다시 오게 하는 법",
+      "desc": "후속 메시지 · 기념일 리마인더 · VIP 케어 · 추천 유도.",
+      "icon": "i-heart",
+      "data": "analyses/retention/chapter.json"
+    },
+    {
+      "id": "cs-ops",
+      "num": "08",
+      "title": "CS 도구 · 백오피스",
+      "subtitle": "도구 · 템플릿 · 팀 운영",
+      "desc": "카카오톡 채널·네이버 톡톡 운영, 응대 템플릿, 팀 워크플로.",
+      "icon": "i-package",
+      "data": "analyses/cs-ops/chapter.json"
     }
   ],
   "releases": [
+    {
+      "version": "1.1.0",
+      "date": "2026-05-14",
+      "title": "고객 상담 중심 가이드로 컨셉 전환",
+      "tag": "MAJOR",
+      "highlight": "타겟 독자를 '온라인 꽃 배달 쇼핑몰 상담사'로 재정의하고, 목차를 상담 시나리오 중심 8개 챕터로 전면 개편했습니다.",
+      "changes": [
+        { "type": "changed", "value": "목차 전면 개편: 상담의 기초 · 상품 추천 · 배송 · 상품 문의 · 결제 환불 · 컴플레인 · 재구매 · CS 도구" },
+        { "type": "added", "value": "GitBook식 통합 검색 (Cmd/Ctrl+K) — 챕터·아티클을 한 번에 찾아 바로 이동" },
+        { "type": "removed", "value": "기존 창업·시장 분석 중심 8개 챕터 콘텐츠 제거" }
+      ]
+    },
     {
       "version": "1.0.0",
       "date": "2026-05-14",
       "title": "꽃배달 창업 백과사전 v1.0 출간",
       "tag": "MAJOR",
-      "highlight": "시장 분석부터 운영·법규까지 8개 챕터 골격과 초판 아티클을 공개합니다.",
+      "highlight": "시장 분석부터 운영·법규까지 8개 챕터 골격으로 첫 버전을 공개했습니다 (이후 v1.1에서 상담 중심으로 전환).",
       "changes": [
-        { "type": "added", "value": "8개 챕터 카테고리 구조 (시작하기 → 재무·법규)" },
-        { "type": "added", "value": "초판 아티클 10건: 시작하기·시장 분석 카테고리 우선 공개" },
+        { "type": "added", "value": "8개 챕터 카테고리 구조" },
+        { "type": "added", "value": "초판 아티클 10건" },
         { "type": "added", "value": "릴리즈 노트 페이지 신설 (#changelog)" },
-        { "type": "added", "value": "사이드바 네비게이션 + 챕터별 아티클 인덱스" },
-        { "type": "added", "value": "라이트/다크 모드 + 모바일 반응형" }
+        { "type": "added", "value": "라이트/다크 모드 + 큰글씨 모드 + 모바일 반응형" }
       ]
     },
     {
@@ -104,10 +116,9 @@
       "date": "2026-04-28",
       "title": "베타 — 콘텐츠 골격 확정",
       "tag": "MINOR",
-      "highlight": "8개 챕터의 목차와 핵심 아티클 골격을 확정했습니다.",
+      "highlight": "챕터별 학습 목표와 핵심 아티클 골격을 확정했습니다.",
       "changes": [
         { "type": "added", "value": "챕터별 학습 목표(Learning Objective) 정의" },
-        { "type": "added", "value": "용어집(Glossary) 초안 작성" },
         { "type": "improved", "value": "아티클 본문 블록 컴포넌트(heading/note/kv/structure) 정비" }
       ]
     },
@@ -119,8 +130,7 @@
       "highlight": "사이드바·홈·라우팅을 포함한 가이드북 셸을 구현했습니다.",
       "changes": [
         { "type": "added", "value": "토큰 기반 디자인 시스템 (라이트/다크)" },
-        { "type": "added", "value": "해시 기반 SPA 라우팅 (#chapter/, #chapter/article)" },
-        { "type": "added", "value": "JSON 매니페스트 단일 진입점 (system.json)" }
+        { "type": "added", "value": "해시 기반 SPA 라우팅 (#chapter/, #chapter/article)" }
       ]
     },
     {
@@ -136,7 +146,7 @@
   ],
   "counts": {
     "chapters": 8,
-    "articles": 10,
-    "releases": 4
+    "articles": 4,
+    "releases": 5
   }
 }

@@ -1,9 +1,66 @@
 {
   "id": "product-inquiry",
-  "num": "04",
+  "num": "02",
   "title": "상품 문의 응대",
-  "subtitle": "실물 · 사이즈 · 대체 · 관리법",
-  "summary": "\"사진이랑 똑같이 와요?\" \"이 꽃이 없으면 어떡하죠?\" — 상품 자체에 대한 질문에 신뢰감 있게 답하는 법.",
-  "objective": "주력 상품 10종에 대해 '실물 차이 설명 / 대체 가능 꽃 / 관리법' 3가지를 표준화해 둡니다.",
-  "articles": []
+  "subtitle": "근조·축하·란·식물·바구니·다발",
+  "summary": "꽃집의 주요 상품 카테고리별로 자주 받는 질문과 표준 응대법을 정리합니다. 카테고리마다 고객의 의도·예산·관계가 다르므로 응대 톤도 달라야 합니다.",
+  "objective": "주력 상품 7개 카테고리 각각에 대해 '한 줄 추천 멘트 / 자주 받는 질문 3개 / 표준 답변'을 정리합니다.",
+  "articles": [
+    {
+      "id": "funeral-wreath",
+      "num": "01",
+      "title": "근조화환",
+      "summary": "장례식장 발송 — 시간 압박과 격식을 동시에 맞추는 응대.",
+      "readTime": "6분",
+      "blocks": []
+    },
+    {
+      "id": "celebration-wreath",
+      "num": "02",
+      "title": "축하화환",
+      "summary": "개업·승진·결혼 — 사이즈·리본 문구·도착 시점이 핵심.",
+      "readTime": "6분",
+      "blocks": []
+    },
+    {
+      "id": "oriental-orchid",
+      "num": "03",
+      "title": "동양란",
+      "summary": "심플하고 격조 있는 선물 — 종류·관리·재구매 사이클.",
+      "readTime": "5분",
+      "blocks": []
+    },
+    {
+      "id": "western-orchid",
+      "num": "04",
+      "title": "서양란",
+      "summary": "호접란 중심의 화사한 디자인 상품 — 색상·기간·관리.",
+      "readTime": "5분",
+      "blocks": []
+    },
+    {
+      "id": "foliage-plant",
+      "num": "05",
+      "title": "관엽식물",
+      "summary": "공기정화 식물·인테리어 식물 — 길게 가는 선물의 응대.",
+      "readTime": "5분",
+      "blocks": []
+    },
+    {
+      "id": "flower-basket",
+      "num": "06",
+      "title": "꽃바구니",
+      "summary": "병문안·생일·축하 — 사이즈·색감·받는 분 상황별 추천.",
+      "readTime": "5분",
+      "blocks": []
+    },
+    {
+      "id": "bouquet",
+      "num": "07",
+      "title": "꽃다발",
+      "summary": "기념일·연인·일상 — 받는 사람이 들고 가야 하는 사이즈 감각.",
+      "readTime": "5분",
+      "blocks": []
+    }
+  ]
 }

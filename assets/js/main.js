@@ -169,6 +169,7 @@
       html += '</ul></li>';
     });
     chapterNavList.innerHTML = html;
+    syncCollapseAllState();
   }
 
   function fillChapterArticles(chapterId) {
@@ -609,6 +610,23 @@
   }
 
   /* ============ SIDEBAR INTERACTIONS ============ */
+  /* Disable the collapse-all button when no chapter is open, so the
+     control doesn't sit there 'armed' with nothing to act on. */
+  function syncCollapseAllState() {
+    var btn = document.querySelector('.sidebar-collapse-all');
+    if (!btn) return;
+    var anyOpen = !!document.querySelector('.sidebar-expandable.is-open');
+    btn.disabled = !anyOpen;
+  }
+
+  function collapseAllChapters() {
+    document.querySelectorAll('.sidebar-expandable.is-open').forEach(function (el) {
+      el.classList.remove('is-open');
+    });
+    syncCollapseAllState();
+  }
+  window.collapseAllChapters = collapseAllChapters;
+
   document.addEventListener('click', function (e) {
     var link = e.target.closest('.sidebar-link');
     if (!link) return;
@@ -624,9 +642,11 @@
       if (targetHash === currentHash) {
         e.preventDefault();
         parent.classList.toggle('is-open');
+        syncCollapseAllState();
         return;
       }
       parent.classList.add('is-open');
+      syncCollapseAllState();
     }
 
     if (link.closest('.sidebar-sub')) {

@@ -94,6 +94,13 @@
     <symbol id="i-corner-down-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
       <path d="M9 14l-4-4 4-4"/><path d="M20 4v6a4 4 0 01-4 4H5"/>
     </symbol>
+    <symbol id="i-percent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="5" x2="5" y2="19"/>
+      <circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/>
+    </symbol>
+    <symbol id="i-chevron-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"/>
+    </symbol>
   </defs>
 </svg>
 
@@ -123,7 +130,14 @@
 
   <!-- Chapters (dynamically populated) -->
   <div class="sidebar-group" id="sidebar-chapters">
-    <div class="sidebar-group-title">목차 · Chapters</div>
+    <div class="sidebar-group-header">
+      <div class="sidebar-group-title">목차 · Chapters</div>
+      <button class="sidebar-collapse-all" type="button" onclick="collapseAllChapters()"
+              aria-label="모든 챕터 접기" title="펼쳐진 챕터를 한 번에 접기">
+        <svg class="ico" aria-hidden="true"><use href="#i-chevron-up"/></svg>
+        <span>모두 접기</span>
+      </button>
+    </div>
     <ul class="sidebar-nav" id="chapter-nav-list">
       <li class="sidebar-empty">목차를 불러오는 중…</li>
     </ul>

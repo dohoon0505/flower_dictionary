@@ -1,0 +1,142 @@
+{
+  "name": "flower-startup-encyclopedia",
+  "fullName": "꽃배달 창업 백과사전",
+  "shortName": "꽃백",
+  "version": "1.0.0",
+  "description": "꽃배달 창업을 처음부터 끝까지 안내하는 실전 가이드북. 시장 분석부터 상품 구성, 공급망, 마케팅, 운영, 법규까지 단계별로 정리한 백과사전 형식의 매뉴얼.",
+  "tagline": "꽃을 파는 일이 아니라, 시간을 파는 일입니다.",
+  "entry": {
+    "ai": "AGENTS.md",
+    "human": "CLAUDE.md",
+    "readme": "README.md"
+  },
+  "chapters": [
+    {
+      "id": "getting-started",
+      "num": "01",
+      "title": "시작하기",
+      "subtitle": "꽃배달 창업의 첫 발걸음",
+      "desc": "시장 구조와 사업 형태, 필요한 자격을 한눈에 정리합니다.",
+      "icon": "i-leaf",
+      "data": "analyses/getting-started/chapter.json"
+    },
+    {
+      "id": "market-research",
+      "num": "02",
+      "title": "시장 분석 & 컨셉 설정",
+      "subtitle": "누구에게, 무엇을, 어떻게 팔 것인가",
+      "desc": "타겟·경쟁사·USP를 뾰족하게 정의하는 단계입니다.",
+      "icon": "i-search",
+      "data": "analyses/market-research/chapter.json"
+    },
+    {
+      "id": "product-pricing",
+      "num": "03",
+      "title": "상품 구성 & 가격 정책",
+      "subtitle": "꽃다발 한 송이부터 가격표까지",
+      "desc": "상품 카테고리·시즌 운영·원가 기반 가격 책정 방법을 다룹니다.",
+      "icon": "i-tag",
+      "data": "analyses/product-pricing/chapter.json"
+    },
+    {
+      "id": "supply-chain",
+      "num": "04",
+      "title": "공급망 & 재고 관리",
+      "subtitle": "양재꽃시장에서 우리 가게까지",
+      "desc": "도매시장·산지·자재 공급처와 재고 회전을 관리하는 노하우.",
+      "icon": "i-truck",
+      "data": "analyses/supply-chain/chapter.json"
+    },
+    {
+      "id": "channels",
+      "num": "05",
+      "title": "판매 채널 운영",
+      "subtitle": "오프라인 · 자사몰 · 플랫폼",
+      "desc": "매장과 온라인 채널을 어떻게 조합할지 결정하는 단계입니다.",
+      "icon": "i-store",
+      "data": "analyses/channels/chapter.json"
+    },
+    {
+      "id": "marketing",
+      "num": "06",
+      "title": "마케팅 & 고객 확보",
+      "subtitle": "SNS · 검색광고 · 리뷰 · 단골",
+      "desc": "초기 인지도 확보와 단골 만들기까지 마케팅의 전 단계.",
+      "icon": "i-megaphone",
+      "data": "analyses/marketing/chapter.json"
+    },
+    {
+      "id": "operations",
+      "num": "07",
+      "title": "주문 · 배송 운영",
+      "subtitle": "받고, 만들고, 보내는 흐름",
+      "desc": "주문 접수부터 배송 사고 대응까지 운영의 실전 매뉴얼.",
+      "icon": "i-package",
+      "data": "analyses/operations/chapter.json"
+    },
+    {
+      "id": "finance-legal",
+      "num": "08",
+      "title": "재무 · 법규 · 세무",
+      "subtitle": "사업을 사업답게 굴리는 뼈대",
+      "desc": "손익분기·세무·인허가 등 사장님이라면 알아야 하는 숫자와 규정.",
+      "icon": "i-receipt",
+      "data": "analyses/finance-legal/chapter.json"
+    }
+  ],
+  "releases": [
+    {
+      "version": "1.0.0",
+      "date": "2026-05-14",
+      "title": "꽃배달 창업 백과사전 v1.0 출간",
+      "tag": "MAJOR",
+      "highlight": "시장 분석부터 운영·법규까지 8개 챕터 골격과 초판 아티클을 공개합니다.",
+      "changes": [
+        { "type": "added", "value": "8개 챕터 카테고리 구조 (시작하기 → 재무·법규)" },
+        { "type": "added", "value": "초판 아티클 10건: 시작하기·시장 분석 카테고리 우선 공개" },
+        { "type": "added", "value": "릴리즈 노트 페이지 신설 (#changelog)" },
+        { "type": "added", "value": "사이드바 네비게이션 + 챕터별 아티클 인덱스" },
+        { "type": "added", "value": "라이트/다크 모드 + 모바일 반응형" }
+      ]
+    },
+    {
+      "version": "0.9.0",
+      "date": "2026-04-28",
+      "title": "베타 — 콘텐츠 골격 확정",
+      "tag": "MINOR",
+      "highlight": "8개 챕터의 목차와 핵심 아티클 골격을 확정했습니다.",
+      "changes": [
+        { "type": "added", "value": "챕터별 학습 목표(Learning Objective) 정의" },
+        { "type": "added", "value": "용어집(Glossary) 초안 작성" },
+        { "type": "improved", "value": "아티클 본문 블록 컴포넌트(heading/note/kv/structure) 정비" }
+      ]
+    },
+    {
+      "version": "0.5.0",
+      "date": "2026-03-15",
+      "title": "알파 — 디자인 시스템 셸 구축",
+      "tag": "MINOR",
+      "highlight": "사이드바·홈·라우팅을 포함한 가이드북 셸을 구현했습니다.",
+      "changes": [
+        { "type": "added", "value": "토큰 기반 디자인 시스템 (라이트/다크)" },
+        { "type": "added", "value": "해시 기반 SPA 라우팅 (#chapter/, #chapter/article)" },
+        { "type": "added", "value": "JSON 매니페스트 단일 진입점 (system.json)" }
+      ]
+    },
+    {
+      "version": "0.1.0",
+      "date": "2026-02-20",
+      "title": "프로젝트 킥오프",
+      "tag": "INITIAL",
+      "highlight": "꽃배달 창업자에게 필요한 정보를 한 권에 담는다는 목표로 프로젝트를 시작했습니다.",
+      "changes": [
+        { "type": "added", "value": "GitHub 저장소 생성 · 라이선스(MIT) · 기본 문서 구성" }
+      ]
+    }
+  ],
+  "counts": {
+    "chapters": 8,
+    "articles": 10,
+    "releases": 4
+  }
+}

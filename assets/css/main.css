@@ -148,7 +148,7 @@
 /* ============ RESET + BASE ============ */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 body {
   font: 400 15px/1.6 var(--font-sans);
   background: var(--sm-background-default);
@@ -1140,6 +1140,10 @@ svg.ico { width: 24px; height: 24px; display: inline-block; flex-shrink: 0; vert
   .report-nav-next { text-align: left; }
   .article-row { grid-template-columns: 36px 1fr; }
   .article-row-meta { grid-column: 1 / -1; padding-left: 52px; }
+  /* Force single column so the auto-fill minmax(280px) doesn't push
+     cards past the viewport when the user scales up via 큰글씨 mode. */
+  .chapter-grid,
+  .audience-grid { grid-template-columns: 1fr; }
 }
 
 /* ============ FOOTER ============ */

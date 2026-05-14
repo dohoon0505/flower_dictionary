@@ -986,9 +986,10 @@ svg.ico { width: 24px; height: 24px; display: inline-block; flex-shrink: 0; vert
 }
 
 /* ============ BLOCK RENDERERS (article body) ============ */
+/* Boxes (placeholder, KV, structure, stats, ...) fill the container; only
+   prose blocks are narrowed for readable line length. */
 .report-blocks {
   padding: var(--size-700) 0 var(--size-400);
-  max-width: 760px;
 }
 
 .blk-heading {
@@ -1005,6 +1006,7 @@ svg.ico { width: 24px; height: 24px; display: inline-block; flex-shrink: 0; vert
   font: 400 15px/1.85 var(--font-sans);
   color: var(--sm-content-primary);
   margin: 0 0 var(--size-500);
+  max-width: 760px;
 }
 
 .blk-note {

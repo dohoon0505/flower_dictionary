@@ -1164,6 +1164,83 @@ svg.ico { width: 24px; height: 24px; display: inline-block; flex-shrink: 0; vert
   margin-top: 4px;
 }
 
+/* ─── region-table block ─── */
+.blk-region-table {
+  margin: 0 0 var(--size-600);
+  border: 1px solid var(--sm-border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.blk-region-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-400);
+  padding: var(--size-300) var(--size-500);
+  background: var(--sm-background-muted);
+  border-bottom: 1px solid var(--sm-border-subtle);
+}
+.blk-region-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: 500 12px/1 var(--font-sans);
+  color: var(--sm-content-secondary);
+}
+.blk-region-legend-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.blk-region-legend-dot--high { background: var(--p-rose-500, #d9446c); }
+.blk-region-legend-dot--mid  { background: #f97316; }
+.blk-region-legend-dot--none { background: var(--sm-border-default); }
+
+.blk-region-group {
+  padding: var(--size-400) var(--size-500);
+  border-bottom: 1px solid var(--sm-border-subtle);
+}
+.blk-region-group:last-child { border-bottom: none; }
+.blk-region-group-name {
+  font: 700 11px/1 var(--font-sans);
+  color: var(--sm-content-tertiary);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--size-300);
+}
+.blk-region-areas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.blk-region-area {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font: 500 12px/1 var(--font-sans);
+  padding: 5px 10px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+.blk-region-area em { font-style: normal; font-size: 11px; opacity: 0.8; }
+.blk-region-area--high {
+  background: var(--p-rose-500, #d9446c);
+  color: #fff;
+}
+.blk-region-area--mid {
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+}
+[data-theme="dark"] .blk-region-area--mid {
+  background: #431407;
+  color: #fb923c;
+  border-color: #7c2d12;
+}
+.blk-region-area--none {
+  background: var(--sm-background-muted);
+  color: var(--sm-content-tertiary);
+  border: 1px solid var(--sm-border-subtle);
+}
+
 /* ─── image-slot block (placeholder + design guide) ─── */
 .blk-image-slot {
   margin: 0 0 var(--size-600);

@@ -268,8 +268,9 @@
       case 'kv':       return renderKV(block);
       case 'stats':    return renderStats(block);
       case 'structure': return renderStructure(block);
-      case 'image':      return renderImage(block);
-      case 'image-slot': return renderImageSlot(block);
+      case 'image':         return renderImage(block);
+      case 'image-slot':    return renderImageSlot(block);
+      case 'region-table':  return renderRegionTable(block);
       default: return '';
     }
   }
@@ -289,6 +290,37 @@
       h += escapeHtml(b.guide);
       h += '</div>';
     }
+    h += '</div>';
+    return h;
+  }
+  function renderRegionTable(b) {
+    var FEE_CLASS = { '20000': 'high', '10000': 'mid', '0': 'none' };
+    var h = '<div class="blk-region-table">';
+    /* legend */
+    h += '<div class="blk-region-legend">';
+    (b.legend || []).forEach(function(l) {
+      h += '<span class="blk-region-legend-item">';
+      h += '<span class="blk-region-legend-dot blk-region-legend-dot--' + escapeHtml(l.tier) + '"></span>';
+      h += escapeHtml(l.label);
+      h += '</span>';
+    });
+    h += '</div>';
+    /* regions */
+    (b.regions || []).forEach(function(region) {
+      h += '<div class="blk-region-group">';
+      h += '<div class="blk-region-group-name">' + escapeHtml(region.name) + '</div>';
+      h += '<div class="blk-region-areas">';
+      (region.areas || []).forEach(function(area) {
+        var tier = FEE_CLASS[String(area.fee)] || 'none';
+        h += '<span class="blk-region-area blk-region-area--' + tier + '">';
+        h += escapeHtml(area.name);
+        if (area.fee > 0) {
+          h += '<em>+' + (area.fee / 10000) + '만</em>';
+        }
+        h += '</span>';
+      });
+      h += '</div></div>';
+    });
     h += '</div>';
     return h;
   }

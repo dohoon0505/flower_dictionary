@@ -1214,13 +1214,13 @@ svg.ico { width: 24px; height: 24px; display: inline-block; flex-shrink: 0; vert
 .blk-region-area {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  font: 500 12px/1 var(--font-sans);
-  padding: 5px 10px;
+  gap: 5px;
+  font: 600 14px/1 var(--font-sans);
+  padding: 7px 14px;
   border-radius: var(--radius-full);
   white-space: nowrap;
 }
-.blk-region-area em { font-style: normal; font-size: 11px; opacity: 0.8; }
+.blk-region-area em { font-style: normal; font-size: 12px; opacity: 0.8; font-weight: 500; }
 .blk-region-area--high {
   background: var(--p-rose-500, #d9446c);
   color: #fff;

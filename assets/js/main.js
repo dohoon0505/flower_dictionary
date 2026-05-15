@@ -294,29 +294,29 @@
     return h;
   }
   function renderRegionTable(b) {
-    var FEE_CLASS = { '20000': 'high', '10000': 'mid', '0': 'none' };
+    var FEE_CLASS = { '20000': 'high', '10000': 'mid' };
     var h = '<div class="blk-region-table">';
-    /* legend */
+    /* legend — none 항목 제외 */
     h += '<div class="blk-region-legend">';
-    (b.legend || []).forEach(function(l) {
+    (b.legend || []).filter(function(l) { return l.tier !== 'none'; }).forEach(function(l) {
       h += '<span class="blk-region-legend-item">';
       h += '<span class="blk-region-legend-dot blk-region-legend-dot--' + escapeHtml(l.tier) + '"></span>';
       h += escapeHtml(l.label);
       h += '</span>';
     });
     h += '</div>';
-    /* regions */
+    /* regions — fee=0 지역 표시 안 함 */
     (b.regions || []).forEach(function(region) {
+      var visibleAreas = (region.areas || []).filter(function(a) { return a.fee > 0; });
+      if (!visibleAreas.length) return;
       h += '<div class="blk-region-group">';
       h += '<div class="blk-region-group-name">' + escapeHtml(region.name) + '</div>';
       h += '<div class="blk-region-areas">';
-      (region.areas || []).forEach(function(area) {
-        var tier = FEE_CLASS[String(area.fee)] || 'none';
+      visibleAreas.forEach(function(area) {
+        var tier = FEE_CLASS[String(area.fee)] || 'mid';
         h += '<span class="blk-region-area blk-region-area--' + tier + '">';
         h += escapeHtml(area.name);
-        if (area.fee > 0) {
-          h += '<em>+' + (area.fee / 10000) + '만</em>';
-        }
+        h += '<em>+' + (area.fee / 10000) + '만</em>';
         h += '</span>';
       });
       h += '</div></div>';

@@ -1164,6 +1164,51 @@ svg.ico { width: 24px; height: 24px; display: inline-block; flex-shrink: 0; vert
   margin-top: 4px;
 }
 
+/* ─── image-slot block (placeholder + design guide) ─── */
+.blk-image-slot {
+  margin: 0 0 var(--size-600);
+}
+.blk-image-slot-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size-300);
+  min-height: 160px;
+  border: 2px dashed var(--sm-border-default);
+  border-radius: var(--radius-lg);
+  background: var(--sm-background-muted);
+  color: var(--sm-content-tertiary);
+  padding: var(--size-700) var(--size-600);
+}
+.blk-image-slot-label {
+  font: 500 13px/1 var(--font-sans);
+}
+.blk-image-slot-guide {
+  display: flex;
+  gap: var(--size-300);
+  align-items: flex-start;
+  margin-top: var(--size-200);
+  padding: var(--size-300) var(--size-400);
+  background: var(--sm-background-subtle);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  border-left: 3px solid var(--sm-border-default);
+  font: 400 12px/1.7 var(--font-sans);
+  color: var(--sm-content-secondary);
+}
+.blk-image-slot-guide-badge {
+  flex-shrink: 0;
+  font: 700 10px/1 var(--font-mono);
+  color: var(--sm-content-tertiary);
+  background: var(--sm-background-muted);
+  border: 1px solid var(--sm-border-subtle);
+  border-radius: var(--radius-full);
+  padding: 3px 8px;
+  margin-top: 1px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
 /* ─── image block ─── */
 .blk-image {
   margin: 0 0 var(--size-600);

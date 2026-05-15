@@ -268,9 +268,29 @@
       case 'kv':       return renderKV(block);
       case 'stats':    return renderStats(block);
       case 'structure': return renderStructure(block);
-      case 'image':     return renderImage(block);
+      case 'image':      return renderImage(block);
+      case 'image-slot': return renderImageSlot(block);
       default: return '';
     }
+  }
+  function renderImageSlot(b) {
+    var h = '<div class="blk-image-slot">';
+    h += '<div class="blk-image-slot-box">';
+    h += '<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">';
+    h += '<rect x="3" y="3" width="18" height="18" rx="2"/>';
+    h += '<circle cx="8.5" cy="8.5" r="1.5"/>';
+    h += '<path d="M21 15l-5-5L5 21"/>';
+    h += '</svg>';
+    h += '<span class="blk-image-slot-label">이미지 삽입 예정</span>';
+    h += '</div>';
+    if (b.guide) {
+      h += '<div class="blk-image-slot-guide">';
+      h += '<span class="blk-image-slot-guide-badge">디자인 가이드</span>';
+      h += escapeHtml(b.guide);
+      h += '</div>';
+    }
+    h += '</div>';
+    return h;
   }
   function renderImage(b) {
     var h = '<figure class="blk-image">';
